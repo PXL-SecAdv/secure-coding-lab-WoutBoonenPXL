@@ -1,6 +1,7 @@
 FROM node:lts-alpine
 WORKDIR /usr/app
 COPY package*.json ./
+ENV DB_USER=${DB_USER} DB_PASS=${DB_PASS} DB_HOST=${DB_HOST}
 RUN npm install
 RUN npm update
 COPY . .
